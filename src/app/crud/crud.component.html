@@ -1,0 +1,23 @@
+<!-- <p>crud works!</p> -->
+<form #ads="ngForm"> 
+    <input type = "text" name = "name" placeholder = "name" ngModel ([ngModel])="ab.name"> 
+    <br/> 
+    <input type = "text" name = "place" placeholder = "place" ngModel ([ngModel])="ab.place"> 
+    <br/> 
+    <input type = "submit" (click)="ins(ads.value)">
+  </form>
+  <br>
+  <table border="1">
+      <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Place</th>
+          <th>Delete</th>
+      </tr>
+    <tr *ngFor="let x of news">
+      <td>{{x.id}}</td>
+      <td>{{x.name}}</td>
+      <td>{{x.place}}</td>
+      <td (click)="del(x)"><input type = "submit" value="Delete"></td>
+    </tr>
+  </table>

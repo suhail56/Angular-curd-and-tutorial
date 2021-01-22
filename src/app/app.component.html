@@ -1,0 +1,15 @@
+<!-- <a routerLink="/newlink">click</a>
+<router-outlet></router-outlet> -->
+<form #login="ngForm" (ngSubmit) = "Submit(login.value)"> 
+  <input type="text" placeholder = "name" name="name" ngModel required minlength="2" maxlength="5" #name="ngModel"> 
+  <br/> 
+  <input type = "password" name = "password" placeholder = "password" ngModel > 
+  <br/> 
+  <input type = "submit" value = "submit">
+</form>
+
+<div *ngIf="name.invalid && name.touched">
+  <div *ngIf="name.errors.required">Name is required.</div>
+  <div *ngIf="name.errors.minlength">Name must be at least 2 characters long.</div>
+  <div *ngIf="name.errors.maxlength">Name must be at least 5 characters long.</div>
+</div>

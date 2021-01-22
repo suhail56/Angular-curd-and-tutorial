@@ -1,0 +1,13 @@
+<ul *ngFor="let y of ab">
+<li>{{y}}</li>
+</ul>
+
+<button (click)="show = !show">Click</button>     
+<div *ngIf="show">Welcome</div>
+
+<ul [ngSwitch]="alp">
+    <li *ngSwitchCase="'abc'">abc</li>
+    <li *ngSwitchCase="'def'">def</li>
+    <li *ngSwitchCase="'ghi'">ghi</li>
+    <li *ngSwitchDefault>Null</li>
+</ul>

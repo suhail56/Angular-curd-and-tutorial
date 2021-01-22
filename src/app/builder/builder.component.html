@@ -1,0 +1,9 @@
+<p>builder works!</p>
+<form [formGroup]="builds" (ngSubmit)="sub(builds.value)"> 
+
+    <input formControlName="firstName" type="text" placeholder="name"> 
+<br/>
+    <input formControlName="lastName" type="text" placeholder="password"> 
+    <br/>
+    <input type="submit" value="submit">
+    </form>

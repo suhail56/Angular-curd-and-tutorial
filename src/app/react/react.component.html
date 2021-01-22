@@ -1,0 +1,31 @@
+<!-- <p>react works!</p> -->
+<form [formGroup]="forms" (ngSubmit)="Submit()"> 
+    <input [ngClass]="{'is-invalid':forms.get('name').touched && forms.get('name').invalid}" formControlName="name" type="text" placeholder="name"> 
+    <br/>
+    <input formControlName="password" type="password" placeholder="password"> 
+    <br/>
+    <label>Address: </label>
+    <div formGroupName="address">
+      <input type="text" formControlName="state" placeholder="state">
+      <br/>
+      <input type="text" formControlName="city" placeholder="city">
+  </div>
+    <label>Education: </label>
+    SSLC <input type="checkbox" formControlName="sslc">
+    Degree <input type="checkbox" formControlName="degree">
+<br>
+    <label for="cars">Choose a car: </label>
+      <select formControlName="car">
+        <option value="volvo">volvo</option>
+        <option value="benz">benz</option>
+        <option value="bmw">bmw</option>
+      </select>
+      <br>
+    <input type="submit" value="submit">
+  </form>
+<br>
+  <div *ngIf="forms.get('name').touched && forms.get('name').invalid">
+    <div *ngIf="forms.get('name').errors.required">Name required</div>
+    <div *ngIf="forms.get('name').errors.minlength">min 2 required</div>
+    <div *ngIf="forms.get('name').errors.maxlength">max 5 only</div>
+  </div>
